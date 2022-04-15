@@ -49,6 +49,11 @@ function reverseString7(str) {
     return reversedStr;
 }
 
+// This method was written by GitHub Copilot :)
+function reverseString8(str) {
+    return [...str].reverse().join("");
+}
+
 console.log(reverseString1("JavaScript is not a bad language"));
 console.log(reverseString2("JavaScript is not a bad language"));
 console.log(reverseString3("JavaScript is not a bad language"));
@@ -56,3 +61,4 @@ console.log(reverseString4("JavaScript is not a bad language"));
 console.log(reverseString5("JavaScript is not a bad language"));
 console.log(reverseString6("JavaScript is not a bad language"));
 console.log(reverseString7("JavaScript is not a bad language"));
+console.log(reverseString8("JavaScript is not a bad language"));
