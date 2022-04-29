@@ -154,7 +154,7 @@ async function test() {
     // Feel free to experiment with various dishes and ingridients
 
     await kitchen.cookFastestOrder(); // Returns fastest dish to make
-    console.log(await kitchen.cookAllOrders()); // Returns two dishes in array
+    await kitchen.cookAllOrders(); // Returns two dishes in array
 
     kitchen.order(new SteakAndFries()); // Throws Error: Not enough ingridients in fridge
 }
