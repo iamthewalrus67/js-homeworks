@@ -21,7 +21,7 @@ class Dish {
 class Bolognese extends Dish {
     constructor() {
         super(10);
-        this.needed_ingridients = {
+        this.neededIngridients = {
             'spaghetti': 1,
             'tomato': 1,
             'meat': 1,
@@ -32,7 +32,7 @@ class Bolognese extends Dish {
 class MashedPotatoes extends Dish {
     constructor() {
         super(8);
-        this.needed_ingridients = {
+        this.neededIngridients = {
             'potato': 1,
         };
     }
@@ -41,7 +41,7 @@ class MashedPotatoes extends Dish {
 class Steak extends Dish {
     constructor() {
         super(7);
-        this.needed_ingridients = {
+        this.neededIngridients = {
             'meat': 1,
         };
     }
@@ -50,7 +50,7 @@ class Steak extends Dish {
 class SteakAndFries extends Dish {
     constructor() {
         super(7);
-        this.needed_ingridients = {
+        this.neededIngridients = {
             'meat': 1,
             'potato': 1,
         };
@@ -122,7 +122,7 @@ class Kitchen {
     }
 
     checkIngridients(order) {
-        for (const [ingridient, quantity] of Object.entries(order.needed_ingridients)) {
+        for (const [ingridient, quantity] of Object.entries(order.neededIngridients)) {
             if ((this.fridge[ingridient] || 0) < quantity) {
                 return false;
             }
@@ -132,7 +132,7 @@ class Kitchen {
     }
 
     spendIngridients(order) {
-        for (const [ingridient, quantity] of Object.entries(order.needed_ingridients)) {
+        for (const [ingridient, quantity] of Object.entries(order.neededIngridients)) {
             this.fridge[ingridient] -= quantity;
         }
     }
