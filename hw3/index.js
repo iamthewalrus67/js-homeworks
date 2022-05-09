@@ -15,7 +15,6 @@ const mouseDownHandler = (ev) => {
     if (isTargetDragged) {
         return;
     }
-    console.log(ev);
 
     const target = ev.target;
     switch (ev.which) {
@@ -38,6 +37,7 @@ const mouseDownHandler = (ev) => {
 
         // Right mouse button
         case 3:
+            ev.preventDefault();
             ev.target.style['background-color'] = generateRandomColor();
     }
 };
@@ -83,14 +83,20 @@ const doubleClickHandler = (ev) => {
     addBoxEventListeners(newBox);
 };
 
+const contextMenuHandler = (ev) => {
+    ev.preventDefault();
+};
+
 const addBoxEventListeners = (box) => {
     box.addEventListener("mousedown", mouseDownHandler);
     box.addEventListener("mouseup", mouseUpHandler);
+    box.addEventListener("contextmenu", contextMenuHandler);
 };
 
 const addBoxContainerEventListeners = (boxContainer) => {
     boxContainer.addEventListener("dblclick", doubleClickHandler);
     boxContainer.addEventListener("mousemove", mouseMoveHandler);
+    boxContainer.addEventListener("contextmenu", contextMenuHandler);
 };
 
 const generateRandomColor = () => {
